@@ -1,3 +1,5 @@
+package S1_02_n1exercici1;
+
 import java.util.ArrayList;
 
 public class Venda {
@@ -26,7 +28,7 @@ public class Venda {
 
     // Mètodes especifics
     public void calcularTotal() {
-        // Llança excepcio personalitzada VendaBuidaException
+        // Llança excepcio personalitzada S1_02_n1exercici1.VendaBuidaException
         //Throw Excepcion:"Per fer una venda primer has d'afegir productes" if productes isEmpty
         // si no:
         float preuTotal = 0f;
@@ -53,6 +55,6 @@ public class Venda {
     }
 
     public String toString() {
-        return "Venda=[productes=" + this.productes.toString() + "]";
+        return "S1_02_n1exercici1.Venda=[productes=" + this.productes.toString() + "]";
     }
 }

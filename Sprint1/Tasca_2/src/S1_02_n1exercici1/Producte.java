@@ -1,3 +1,5 @@
+package S1_02_n1exercici1;
+
 public class Producte {
     private String nom;
     private float preu;
@@ -27,7 +29,7 @@ public class Producte {
     }
 
     public String toString() {
-        return "Producte [nom=" + this.nom + ", preu=" + this.preu + "]";
+        return "S1_02_n1exercici1.Producte [nom=" + this.nom + ", preu=" + this.preu + "]";
     }
 
 }

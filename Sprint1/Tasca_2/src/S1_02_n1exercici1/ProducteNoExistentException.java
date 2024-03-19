@@ -1,3 +1,5 @@
+package S1_02_n1exercici1;
+
 public class ProducteNoExistentException extends Exception{
     private String message;
 

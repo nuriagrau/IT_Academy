@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/IT_Academy.iml" filepath="$PROJECT_DIR$/.idea/IT_Academy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Sprint1/Tasca_1/Sprint1.iml" filepath="$PROJECT_DIR$/Sprint1/Tasca_1/Sprint1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sprint1/Tasca_2/S102n1exercici1/S102n1exercici1.iml" filepath="$PROJECT_DIR$/Sprint1/Tasca_2/S102n1exercici1/S102n1exercici1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sprint1/Tasca_2/Tasca_2.iml" filepath="$PROJECT_DIR$/Sprint1/Tasca_2/Tasca_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sprint1/Tasca_3/Tasca_3.iml" filepath="$PROJECT_DIR$/Sprint1/Tasca_3/Tasca_3.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Extres/n1exercici1/n1exercici1.iml" filepath="$PROJECT_DIR$/../Extres/n1exercici1/n1exercici1.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Extres/n1exercici2/n1exercici2.iml" filepath="$PROJECT_DIR$/../Extres/n1exercici2/n1exercici2.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Extres/n2exercici1/n2exercici1.iml" filepath="$PROJECT_DIR$/../Extres/n2exercici1/n2exercici1.iml" />

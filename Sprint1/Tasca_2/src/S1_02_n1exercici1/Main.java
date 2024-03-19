@@ -1,3 +1,5 @@
+package S1_02_n1exercici1;
+
 import java.util.Scanner;
 
 public class Main {
@@ -25,7 +27,7 @@ public class Main {
                     break;
                 case 2:
                     missatge = Botiga.afegirProducte(venda);
-                    System.out.println("Venda té ara els següents productes:" + venda.getProductes().toString());
+                    System.out.println("S1_02_n1exercici1.Venda té ara els següents productes:" + venda.getProductes().toString());
                     break;
                 case 3:
                     missatge = Botiga.calcularTotalVenda(venda);

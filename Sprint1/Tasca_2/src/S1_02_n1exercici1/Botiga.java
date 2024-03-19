@@ -1,3 +1,5 @@
+package S1_02_n1exercici1;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
