@@ -6,5 +6,6 @@
     <mapping directory="$PROJECT_DIR$/../Extres/n2exercici1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Extres/n3exercici1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Maven" vcs="Git" />
   </component>
 </project>

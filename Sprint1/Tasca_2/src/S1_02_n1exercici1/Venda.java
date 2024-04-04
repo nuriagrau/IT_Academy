@@ -11,7 +11,6 @@ public class Venda {
         this.preuTotal = 0;
     }
 
-    // Getters
     public ArrayList<Producte> getProductes() {
         return this.productes;
     }
@@ -20,17 +19,12 @@ public class Venda {
         return this.preuTotal;
     }
 
-    // Setters
     public void setPreuTotal() {
         this.preuTotal = preuTotal;
     }
 
 
-    // Mètodes especifics
     public void calcularTotal() {
-        // Llança excepcio personalitzada S1_02_n1exercici1.VendaBuidaException
-        //Throw Excepcion:"Per fer una venda primer has d'afegir productes" if productes isEmpty
-        // si no:
         float preuTotal = 0f;
         for (int i = 0; i < this.productes.size(); i++) {
             preuTotal += this.productes.get(i).getPreu();
@@ -54,6 +48,7 @@ public class Venda {
         this.productes.add(producte);
     }
 
+    @Override
     public String toString() {
         return "S1_02_n1exercici1.Venda=[productes=" + this.productes.toString() + "]";
     }

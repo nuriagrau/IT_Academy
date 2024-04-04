@@ -70,7 +70,7 @@ public class app {
     public static String writeClassification(String classificacio) {
         String message = "";
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Sprint1/Tasca_3/src/S1_T03_n1exercici3/classificacio.txt", true));
+            FileWriter writer = new FileWriter("Sprint1/Tasca_3/src/S1_T03_n1exercici3/classificacio.txt", true);
             writer.write(classificacio);
             writer.close();
             message = classificacio + "Aquesta classificació s'ha escrit correctament al fitxer classificacio.txt" + "\n";

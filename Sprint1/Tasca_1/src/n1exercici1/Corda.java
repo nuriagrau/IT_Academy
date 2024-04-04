@@ -12,6 +12,7 @@ public class Corda extends Instrument{
         System.out.println("S'ha cridat al constructor de la classe Corda per a un " + super.getNom() + " que val " + super.getPreu() + " euros.");
     }
 
+
     // metode abstracte
     public String tocar() {
         return "Està sonant un instrument de corda";

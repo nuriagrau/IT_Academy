@@ -4,13 +4,11 @@ public class Producte {
     private String nom;
     private float preu;
 
-    // Constructor
     public Producte(String nom, float preu) {
         this.nom = nom;
         this.preu = preu;
     }
 
-    // Getters
     public String getNom() {
         return this.nom;
     }
@@ -19,15 +17,15 @@ public class Producte {
         return this.preu;
     }
 
-    // Setters
-    public void getNom(String nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public void getPreu(float preu) {
+    public void setPreu(float preu) {
         this.preu = preu;
     }
 
+    @Override
     public String toString() {
         return "S1_02_n1exercici1.Producte [nom=" + this.nom + ", preu=" + this.preu + "]";
     }
