@@ -11,80 +11,60 @@ public class Botiga {
     static String missatge = "", nom = "";
     static float preu = 0f;
 
-    public static String crearProducte() {
+    public static String crearProducte() throws ProducteExistentException{
         missatge = "";
         nom = getInputUser("Introdueix el nom del producte que vols crear: ", nom);
-        try {
-            indexProductesExistents = buscarProducteExistent(nom);
-            if (indexProductesExistents != -1) {
-                ProducteExistentException me  = new ProducteExistentException("El producte " + nom + " ja existeix\n");
-                throw me;
+        indexProductesExistents = buscarProducteExistent(nom);
+        if (indexProductesExistents != -1) {
+            // throw new exception del tipo
+            throw new ProducteExistentException("El producte " + nom + " ja existeix\n");
 
-            } else {
-                preu = getInputUser("Introdueix el preu del producte: ", preu);
-                Producte producte = new Producte(nom, preu);
-                productesExistents.add(producte);
-                missatge = "El producte " + nom + " s'ha creat correctament\n";
+        } else {
+            preu = getInputUser("Introdueix el preu del producte: ", preu);
+            Producte producte = new Producte(nom, preu);
+            productesExistents.add(producte);
+            missatge = "El producte " + nom + " s'ha creat correctament\n";
             }
-
-        } catch (ProducteExistentException e){
-            System.out.println(e.toString());
-        }
         return missatge;
     }
 
-    public static String afegirProducte(Venda venda) {
+    public static String afegirProducte(Venda venda) throws ProducteNoExistentException {
         missatge = "";
         indexProductes = -1;
         nom = getInputUser("Introdueix el nom del producte que afegir a venda: ", nom);
-        try {
-            indexProductesExistents = buscarProducteExistent(nom);
-            if (indexProductesExistents == -1) {
-                ProducteNoExistentException me = new ProducteNoExistentException("Aquest producte no existeix\n");
-                throw me;
-            } else {
-                indexProductes = venda.buscarProducteAVenda(nom);
-                if (indexProductes == -1) {
-                    venda.afegirProducte(productesExistents.get(indexProductesExistents));
-                    missatge = "El producte " + nom + " s'ha afegit correctament a venda\n";
-                } else {
-                    missatge = "El producte " + nom + " ja està a venda\n";
-                }
-            }
-        } catch(ProducteNoExistentException e) {
-            System.out.println(e.toString());
+        indexProductesExistents = buscarProducteExistent(nom);
+        if (indexProductesExistents == -1) {
+            throw new ProducteNoExistentException("Aquest producte no existeix\n");
 
+        } else {
+            indexProductes = venda.buscarProducteAVenda(nom);
+            if (indexProductes == -1) {
+                venda.afegirProducte(productesExistents.get(indexProductesExistents));
+                missatge = "El producte " + nom + " s'ha afegit correctament a venda\n" +
+                        "Venda té ara els següents productes:" + venda.getProductes().toString()+ "\n";
+            } else {
+                missatge = "El producte " + nom + " ja està a venda\n";
+            }
         }
         return missatge;
     }
 
-    public static String calcularTotalVenda(Venda venda) {
+    public static String calcularTotalVenda(Venda venda) throws VendaBuidaException{
         missatge = "";
-        try {
-            venda.calcularTotal();
-            if (venda.getProductes().isEmpty()) {
-                VendaBuidaException me = new VendaBuidaException("Per fer una venda primer has d'afegir productes\n");
-                throw me;
-            } else {
-                missatge =  "El preu total de la venda és de: " + venda.getPreuTotal() + "\n";
-            }
-        } catch (VendaBuidaException e) {
-            System.out.println(e.getMessage());
+        venda.calcularTotal();
+        if (venda.getProductes().isEmpty()) {
+            throw new VendaBuidaException("Per fer una venda primer has d'afegir productes\n");
+        } else {
+            missatge =  "El preu total de la venda és de: " + venda.getPreuTotal() + "\n";
         }
         return missatge;
     }
 
-    public static String provocarArrayIndexOutOfBounds() {
+    public static String provocarArrayIndexOutOfBounds() throws ArrayIndexOutOfBoundsException{
         missatge = "";
-        try {
-            float preus[];
-            preus = new float[productesExistents.size()];
-            float ultimPreu = preus[productesExistents.size()];
-
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(e);
-            System.out.println("S'ha provocat un ArrayIndexOutOfBounds exception.\n");
-        }
+        float preus[];
+        preus = new float[productesExistents.size()];
+        float ultimPreu = preus[productesExistents.size()];
         return missatge;
     }
 

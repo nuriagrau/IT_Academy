@@ -14,18 +14,13 @@ public class Entrada {
      public static void reactToInputMismatchException(InputMismatchException e) {
          inputError = true;
          System.out.println("Error de format");
-         input.nextLine();// To clear the buffer for p
+         input.nextLine();
      }
 
     public static void reactToException(Exception e) {
         inputError = true;
         System.out.println("Error de format");
-        input.nextLine();// To clear the buffer
-    }
-
-    public static void throwSinoExceptionfromRecursion() throws Exception{
-        Exception e = new Exception();
-        throw e;
+        input.nextLine();
     }
 
         public static Byte llegirByte (String missatge){

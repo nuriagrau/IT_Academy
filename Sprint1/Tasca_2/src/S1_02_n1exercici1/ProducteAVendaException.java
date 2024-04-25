@@ -1,15 +1,8 @@
 package S1_02_n1exercici1;
 
-public class ProducteAVendaException {
-    private String message;
-
-    public ProducteAVendaException() {}
-
+public class ProducteAVendaException extends Exception{
     public ProducteAVendaException(String message) {
-        this.message = message;
+        super(message);
     }
 
-    public String getMessage(String message) {
-        return message;
-    }
 }

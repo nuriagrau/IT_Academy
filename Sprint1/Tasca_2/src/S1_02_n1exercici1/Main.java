@@ -23,17 +23,34 @@ public class Main {
                     missatge = "Gràcies per la seva visita\n";
                     break;
                 case 1:
-                    missatge = Botiga.crearProducte();
+                    try {
+                        missatge = Botiga.crearProducte();
+                    } catch (ProducteExistentException e){
+                        System.out.println(e.toString());
+                    }
                     break;
                 case 2:
-                    missatge = Botiga.afegirProducte(venda);
-                    System.out.println("S1_02_n1exercici1.Venda té ara els següents productes:" + venda.getProductes().toString());
+                    try {
+                        missatge = Botiga.afegirProducte(venda);
+                    } catch(ProducteNoExistentException e) {
+                        System.out.println(e.getMessage());
+                    }
+
                     break;
                 case 3:
-                    missatge = Botiga.calcularTotalVenda(venda);
+                    try {
+                        missatge = Botiga.calcularTotalVenda(venda);
+                    } catch (VendaBuidaException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 4:
-                    missatge = Botiga.provocarArrayIndexOutOfBounds();
+                    try {
+                        missatge = Botiga.provocarArrayIndexOutOfBounds();
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        System.out.println(e);
+                        missatge = "S'ha provocat un ArrayIndexOutOfBounds exception.\n";
+                    }
                     break;
             }
             System.out.println(missatge);
