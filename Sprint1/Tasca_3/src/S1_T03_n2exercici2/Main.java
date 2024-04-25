@@ -19,13 +19,9 @@ public class Main {
 
         restaurants.add(new Restaurant("Sèsam Negre", 9));
 
-        // This will not be added as it has same name and puntuacio
         restaurants.add(new Restaurant("Sèsam Negre", 9));
 
-        HashSet<Restaurant> sortedRestaurants = (HashSet<Restaurant>) restaurants.stream()
-                .sorted(Comparator.comparing(Restaurant::getNom).thenComparing(Restaurant::getPunts))
-                .collect(Collectors.toCollection(LinkedHashSet::new));
-
+        TreeSet<Restaurant> sortedRestaurants = new TreeSet<>(restaurants);
         System.out.println("HashSet contains: " + restaurants.toString());
         System.out.println("SortedHashSet contains: " + sortedRestaurants.toString());
     }

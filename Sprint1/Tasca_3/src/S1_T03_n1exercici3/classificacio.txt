@@ -3,3 +3,7 @@ mi : 6
 gui : 4
 er : 7
 eu : 6
+nunu : 1
+nur : 3
+a : 0
+nur : 0
