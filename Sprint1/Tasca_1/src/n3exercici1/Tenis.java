@@ -18,6 +18,7 @@ public class Tenis extends Noticia{
         this.tenista = tenista;
     }
 
+    @Override
     public int calculPreu() {
         int preuNoticia = PREU_INICIAL;
         if (this.tenista.equalsIgnoreCase("Federer") || this.tenista.equalsIgnoreCase("Nadal") || this.tenista.equalsIgnoreCase("Djokovik") ) {
@@ -26,6 +27,7 @@ public class Tenis extends Noticia{
         return preuNoticia;
     }
 
+    @Override
     public int calculPuntuacio() {
         int puntuacioNoticia = PUNTS_INICIALS;
         if (this.tenista.equalsIgnoreCase("Federer") || this.tenista.equalsIgnoreCase("Nadal") || this.tenista.equalsIgnoreCase("Djokovik") ) {
@@ -34,6 +36,7 @@ public class Tenis extends Noticia{
         return puntuacioNoticia;
     }
 
+    @Override
     public String toString() {
         return "Noticia de Tenis [titular=" + super.getTitular() + ", text=" + super.getText() + ", tenista=" + this.tenista + ", preu notícia=" + this.calculPreu() + ", puntuació notícia=" + this.calculPuntuacio() + "]";
     }

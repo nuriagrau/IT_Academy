@@ -11,7 +11,7 @@ public class app {
     static HashMap<String, String> map = new HashMap<>();
     static ArrayList<String> countries = new ArrayList<>();
 
-    public static void iniciarConcurs() {
+    public static void iniciarConcurs() { // private
         nomUsuari = getInputUser("Introdueix el nom d'usuari/a per iniciar el concurs: ", nomUsuari);
         uploadCountries();
         classificacio = nomUsuari + " : " +  compete() + "\n";
@@ -23,7 +23,7 @@ public class app {
         return scanner.next();
     }
 
-    public static void uploadCountries() {
+    public static void uploadCountries() { // private
 
         File csvFile = new File("Sprint1/Tasca_3/src/S1_T03_n1exercici3/countries.txt");
 
@@ -39,7 +39,7 @@ public class app {
                         countries.add(country);
                     }
                 } catch (NoSuchElementException e) {
-                    e.printStackTrace();
+                    e.printStackTrace(); // canviar tipus de retorn e.getMessage();
                 }
             }
         } catch (FileNotFoundException e) {
@@ -47,7 +47,7 @@ public class app {
         }
     }
 
-    public static int compete() {
+    public static int compete() { // private
         String resposta = "";
         int punctuation = 0;
         int answersCounter = 0;

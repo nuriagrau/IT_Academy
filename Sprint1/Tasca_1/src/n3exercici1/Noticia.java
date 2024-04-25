@@ -1,14 +1,14 @@
 package n3exercici1;
 
 public abstract class Noticia {
-    private String titular;
-    private String text;
-    private int puntuacio;
-    private int preu;
-    private String competicio;
-    private String club;
+    protected String titular;
+    protected String text;
+    protected int puntuacio;
 
-    // Constructor
+    protected int preu;
+    protected String competicio;
+    protected String club;
+
     public Noticia(String titular, String text) {
         this.titular = titular;
         this.text = text;
@@ -27,7 +27,6 @@ public abstract class Noticia {
         this.club = club;
     }
 
-    // Getters
     public String getTitular() {
         return this.titular;
     }
@@ -52,7 +51,6 @@ public abstract class Noticia {
         return this.club;
     }
 
-    // Setters
     public void setTitular(String titular) {
         this.titular = titular;
     }
@@ -77,12 +75,11 @@ public abstract class Noticia {
         this.club = club;
     }
 
-    // metode especific
     public abstract int calculPreu();
 
     public abstract int calculPuntuacio();
 
-    // metodes propis
+    @Override
     public String toString() {
         return "Noticia [titular=" + this.titular + ", text=" + this.text + "]";
     }

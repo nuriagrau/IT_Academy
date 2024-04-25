@@ -17,6 +17,7 @@ public class F1 extends Noticia{
         this.escuderia = escuderia;
     }
 
+    @Override
     public int calculPreu() {
         int preuNoticia = PREU_INICIAL;
         if (this.escuderia.equalsIgnoreCase("Ferrari") || this.escuderia.equalsIgnoreCase("Mercedes")) {
@@ -25,6 +26,7 @@ public class F1 extends Noticia{
         return preuNoticia;
     }
 
+    @Override
     public int calculPuntuacio() {
         int puntuacioNoticia = PUNTS_INICIALS;
         if (this.escuderia.equalsIgnoreCase("Ferrari") || this.escuderia.equalsIgnoreCase("Mercedes")) {
@@ -33,7 +35,8 @@ public class F1 extends Noticia{
         return puntuacioNoticia;
     }
 
+    @Override
     public String toString() {
-        return "Noticia de F1 [titular=" + super.getTitular() + ", text=" + super.getText() + ", escuderia=" + this.escuderia + ", preu notícia=" + this.calculPreu() + ", puntuació notícia=" + this.calculPuntuacio() + "]";
+        return "Noticia de F1 [titular=" + super.titular + ", text=" + super.text + ", escuderia=" + this.escuderia + ", preu notícia=" + this.calculPreu() + ", puntuació notícia=" + this.calculPuntuacio() + "]";
     }
 }

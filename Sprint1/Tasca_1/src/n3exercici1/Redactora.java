@@ -14,7 +14,6 @@ public class Redactora {
         this.noticies = new ArrayList<Noticia>();
     }
 
-    // Getters
     public String getNom() {
         return this.nom;
     }
@@ -31,12 +30,10 @@ public class Redactora {
         return noticies;
     }
 
-    // Setters
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    // Metodes especifics
     public void afegirNoticia(Noticia noticia) {
         this.noticies.add(noticia);
     }

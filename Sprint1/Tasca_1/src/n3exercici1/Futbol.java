@@ -17,11 +17,12 @@ public class Futbol extends Noticia{
         this.jugador = jugador;
     }
 
+    @Override
     public int calculPreu() {
         int preuNoticia = PREU_INICIAL;
-        if (super.getCompeticio().equalsIgnoreCase("Lliga de Campions")) {
+        if (super.competicio.equalsIgnoreCase("Lliga de Campions")) {
             preuNoticia += 100;
-        } else if (super.getClub().equalsIgnoreCase("Barça") || super.getClub().equalsIgnoreCase("Madrid")) {
+        } else if (super.club.equalsIgnoreCase("Barça") || super.club.equalsIgnoreCase("Madrid")) {
             preuNoticia += 100;
         } else if (this.jugador.equalsIgnoreCase("Ferran Torres") || this.jugador.equalsIgnoreCase("Benzema")) {
             preuNoticia += 50;
@@ -29,13 +30,14 @@ public class Futbol extends Noticia{
         return preuNoticia;
     }
 
+    @Override
     public int calculPuntuacio() {
         int puntuacioNoticia = PUNTS_INICIALS;
-        if (super.getCompeticio().equalsIgnoreCase("Lliga de Campions")) {
+        if (super.competicio.equalsIgnoreCase("Lliga de Campions")) {
             puntuacioNoticia += 3;
-        } else if (super.getCompeticio().equalsIgnoreCase("LLiga")){
+        } else if (super.competicio.equalsIgnoreCase("LLiga")){
             puntuacioNoticia += 2;
-        } else if (super.getClub().equalsIgnoreCase("Barça") || super.getClub().equalsIgnoreCase("Madrid")) {
+        } else if (super.club.equalsIgnoreCase("Barça") || super.club.equalsIgnoreCase("Madrid")) {
             puntuacioNoticia += 1;
         } else if (this.jugador.equalsIgnoreCase("Ferran Torres") || this.jugador.equalsIgnoreCase("Benzema")) {
             puntuacioNoticia += 1;
@@ -44,6 +46,7 @@ public class Futbol extends Noticia{
         return puntuacioNoticia;
     }
 
+    @Override
     public String toString() {
         return "Noticia de Fútbol [titular=" + super.getTitular() + ", text=" + super.getText() + ", competicio=" +  super.getCompeticio() + ", club=" + super.getClub() + ", jugador=" + this.jugador + ", preu notícia=" + this.calculPreu() + ", puntuació notícia=" + this.calculPuntuacio() + "]";
     }

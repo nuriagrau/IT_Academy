@@ -7,30 +7,34 @@ public class Basquet extends Noticia{
         super(titular, text, competicio, club);
     }
 
+    @Override
     public int calculPreu() {
         int preuNoticia = PREU_INICIAL;
-        if (super.getCompeticio().equalsIgnoreCase("Eurolliga")) {
+        if (super.competicio.equalsIgnoreCase("Eurolliga")) {
             preuNoticia += 75;
-        } else if (super.getClub().equalsIgnoreCase("Barça") || super.getClub().equalsIgnoreCase("Madrid")) {
+        } else if (super.club.equalsIgnoreCase("Barça") || super.club.equalsIgnoreCase("Madrid")) {
             preuNoticia += 75;
         }
         return preuNoticia;
     }
 
+
+    @Override
     public int calculPuntuacio() {
         int puntuacioNoticia = PUNTS_INICIALS;
-        if (super.getCompeticio().equalsIgnoreCase("Eurolliga")) {
+        if (super.competicio.equalsIgnoreCase("Eurolliga")) {
             puntuacioNoticia += 3;
-        } else if (super.getCompeticio().equalsIgnoreCase("ACB")) {
+        } else if (super.competicio.equalsIgnoreCase("ACB")) {
             puntuacioNoticia += 2;
-        }else if (super.getClub().equalsIgnoreCase("Barça") || super.getClub().equalsIgnoreCase("Madrid")) {
+        }else if (super.club.equalsIgnoreCase("Barça") || super.club.equalsIgnoreCase("Madrid")) {
             puntuacioNoticia += 1;
         }
         return puntuacioNoticia;
     }
 
+    @Override
     public String toString() {
-        return "Noticia de Bàsquet[titular=" + super.getTitular() + ", text=" + super.getText() + ", competicio=" +  super.getCompeticio() + ", club=" + super.getClub() + ", preu notícia=" + this.calculPreu() + ", puntuació notícia=" + this.calculPuntuacio() + "]";
+        return "Noticia de Bàsquet[titular=" + super.titular + ", text=" + super.text + ", competicio=" +  super.competicio + ", club=" + super.club + ", preu notícia=" + this.calculPreu() + ", puntuació notícia=" + this.calculPuntuacio() + "]";
     }
 }
 

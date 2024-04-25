@@ -16,13 +16,14 @@ public class Month {
         return this.name;
     }
 
-    public String toSring() {
+    @Override
+    public String toString() {
         return "Month [name=" + this.name + "]";
     }
 
     public static void main(String[] args) {
-        boolean allowsDuplicates = false;
-        String duplicatesAllowed = "";
+        boolean allowsDuplicates = false; // no cal
+        String duplicatesAllowed = ""; // no cal
 
         ArrayList<Month> year = new ArrayList<Month>();
 

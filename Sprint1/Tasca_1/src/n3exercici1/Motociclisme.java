@@ -16,6 +16,7 @@ public class Motociclisme extends Noticia{
         this.equip = equip;
     }
 
+    @Override
     public int calculPreu() {
         int preuNoticia = PREU_INICIAL;
         if (this.equip.equalsIgnoreCase("Honda") || this.equip.equalsIgnoreCase("Yamaha")) {
@@ -24,6 +25,7 @@ public class Motociclisme extends Noticia{
         return preuNoticia;
     }
 
+    @Override
     public int calculPuntuacio() {
         int puntuacioNoticia = PUNTS_INICIALS;
         if (this.equip.equalsIgnoreCase("Honda") || this.equip.equalsIgnoreCase("Yamaha")) {
@@ -32,6 +34,7 @@ public class Motociclisme extends Noticia{
         return puntuacioNoticia;
     }
 
+    @Override
     public String toString() {
         return "Noticia de Motociclisme [titular=" + super.getTitular() + ", text=" + super.getText() + ", equip=" + this.equip + ", preu notícia=" + this.calculPreu() + ", puntuació notícia" + this.calculPuntuacio() + "]";
     }
